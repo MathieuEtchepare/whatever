@@ -1,12 +1,13 @@
 <template>
     <v-container>
-        <v-form>
+        <v-form v-on:submit.prevent="addTodo">
           <input v-model="name" placeholder="Enter a new Todo"> <br/>
           <textarea v-model="description" placeholder="add multiple lines"></textarea>
-          <button v-on:click="addTodo">Add Todo</button>
+          <button>Add Todo</button>
         </v-form>
-          <li v-for="(todo,i) in todos"
-          :key="i"
+          <li
+          v-for="(todo,i) in todos"
+          v-bind:key="i"
           >
                 {{ todo.name }} : {{ todo.desc }} <button v-on:click="deleteTodo(i)">X</button>
         </li>
