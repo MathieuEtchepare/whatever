@@ -19,7 +19,7 @@ export default {
     todos: [ { name: 'Clean my room', desc: 'I really need to clean my room' } ]
   }),
   methods: {
-    addTodo: function () { 
+    addTodo: function () {
       this.todos.push({ name: this.name, desc: this.description })
     },
     deleteTodo (i) {
